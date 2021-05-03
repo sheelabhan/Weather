@@ -15,6 +15,7 @@
         android:visibility="invisible">
 
         <RelativeLayout
+            android:layout_marginTop="30dp"
             android:id="@+id/rlMain"
             android:layout_width="match_parent"
             android:layout_height="240dp"
@@ -163,6 +164,12 @@
                 android:text="7°"
                 android:textSize="20dp"
                 />
+            <Button
+                android:id="@+id/btnRepeat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtValueVision"
+                android:text="Goes to the Location"/>
         </RelativeLayout>
 
     </RelativeLayout>

@@ -3,6 +3,7 @@ package com.sheela.weather;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -47,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
 
-    Button btnLoading;
+    Button btnLoading, btnRepeat;
 
     ImageView imgIcon;
 
@@ -196,32 +197,29 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         editText = findViewById(R.id.edt_input);
-
         txtCity = findViewById(R.id.txtCity);
-
         txtTime = findViewById(R.id.txtTime);
-
         txtValue = findViewById(R.id.txtValue);
-
         txtValueFeelLike = findViewById(R.id.txtTitleFeelLike);
-
         txtValueHumidity = findViewById(R.id.txtValueHumidity);
-
         txtValueVision = findViewById(R.id.txtValueVision);
-
         imgIcon = findViewById(R.id.imgIcon);
-
         btnLoading = findViewById(R.id.btnLoading);
-
         relativeLayout = findViewById(R.id.rlWeather);
-
         relativeLayoutMain = findViewById(R.id.rlMain_Ac);
+        btnRepeat=findViewById(R.id.btnRepeat);
+        btnRepeat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }
